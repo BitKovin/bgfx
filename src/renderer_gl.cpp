@@ -8486,7 +8486,7 @@ namespace bgfx { namespace gl
 		PrimInfo prim = s_primInfo[primIndex];
 
 		const bool primitiveRestartSupported = false
-			|| BX_ENABLED(BGFX_CONFIG_RENDERER_OPENGLES >= 30)
+			|| (BX_ENABLED(BGFX_CONFIG_RENDERER_OPENGLES >= 30) && !BX_ENABLED(BX_PLATFORM_EMSCRIPTEN))
 			|| s_extension[Extension::ARB_ES3_compatibility].m_supported
 			;
 
